@@ -92,6 +92,14 @@ function categorize(transaction) {
 	}
 }
 
+// function expensesSum() {
+// 	const expenses = 0;
+// 	for (let i = 0; i < tra.length; i++) {
+// 	  expenses += parseInt(totalExpensesList[i]);
+// 	}
+// 	return expensesSum;
+//   }
+
 function initialize() {
 	historyList.innerHTML = '';
 
