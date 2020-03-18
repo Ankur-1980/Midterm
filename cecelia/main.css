@@ -1,0 +1,136 @@
+ {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9fccff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1em;
+}
+
+.inner-container:nth-child(odd) {
+  background-color: rgb(192, 232, 248);
+  padding: 5px;
+}
+
+.inner-container:nth-child(2) {
+  background-color: rgb(80, 156, 255);
+  padding: 5px;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > .amounts {
+  flex: 1;
+  text-align: center;
+}
+
+.amounts:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0px;
+}
+
+.money.plus {
+  color: green;
+}
+
+.money.minus {
+  color: red;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #4a26ff;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+li {
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 5px 0;
+  list-style: none;
+}
+
+ul {
+  padding: 5px;
+}
+
+.list li.plus {
+  border-left: 10px solid #2ecc71;
+}
+
+.list li.minus {
+  border-left: 10px solid #c0392b;
+}
+
+.categories:nth-child(odd) {
+  background-color: #ccc;
+}
+
+.categories:nth-child(even) {
+  background-color: #888;
+}
+
+.categories > h4 {
+  color: brown;
+}
