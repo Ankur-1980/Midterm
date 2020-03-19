@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="budget-buddy.css">
+</head>
+<body>
+    <div class="">
+        <h1></h1>
+        <p>
+            <input id="name" placeholder="Enter you name" />
+            <input id="weeklyBudget" placeholder="0" />
+            <button onclick=addName()>Submit</button>
+        </p>
+        <div id="span"> Weekly Budget: $ </div>
+        <form action="https://www.google.com/" method="get"></form>
+        <div id="page">
+            <h2>Purchases </h2>
+            <p>Pick Category:</p>
+            <select name="category" id="category">
+                <option value="ent" name="type" selected="selected">Entertainment</option>
+                <option value="food">food</option>
+                <option value="clothing">clothing</option>
+                <option value="bills">bills</option>
+            </select>
+        </div>
+        <input id="amount" placeholder="Please Enter the amount you spent" />
+        <input type="submit" value="Add" id="add">
+        <div id="amountHint" style="color: red;"></div>
+        </form>
+        <div class="largeBox">
+            <div class="expenseBox" id="expense-list">
+                <div>
+                    <h3>Expense:</h3>
+                    <ul id="expensesList">
+                        <li>Entertainment:</li>
+                        <li>Food:</li>
+                        <li>Clothing:</li>
+                        <li>Bills:</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Amount:</h3>
+                    <ul id="amountList">
+                        <li id="entertainment">$0</li>
+                        <li id="food">$0</li>
+                        <li id="clothing">$0</li>
+                        <li id="bills">$0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="budget">
+                <p class="title">Total Expenses</p>
+                <p class="money"><span>$</span><span id="expense-amount">0</span></p>
+                <p class="title">Amount Remaining</p>
+                <p class="money"><span id="bank">$</span><span id="bank-amount">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="budget-buddy.js"></script>
+</body>
+
+</html>
