@@ -33,33 +33,37 @@ class spending {
 		let sum;
 		switch (selectedItem) {
 			case 'ent':
-				let entEl = document.querySelector('#entertainment');
+				let entEl = document.getElementById('entertainment');
 				sum = this.entSpending.reduce(addFun, 0);
 				entEl.textContent = `$${sum}`;
+				console.log('entertainment');
 				return sum;
 
 			case 'clothing':
-				let clothingEl = document.querySelector('#clothing');
+				let clothingEl = document.getElementById('clothing');
 				sum = this.clothingSpending.reduce(addFun, 0);
 				clothingEl.textContent = `$${sum}`;
+				console.log('clothing');
 				return sum;
 
 			case 'bills':
-				let billsEl = document.querySelector('#bills');
+				let billsEl = document.getElementById('bills');
 				sum = this.billsSpending.reduce(addFun, 0);
 				billsEl.textContent = `$${sum}`;
+				console.log('bills');
 				return sum;
 
 			case 'food':
-				let foodEl = document.querySelector('#food');
+				let foodEl = document.getElementById('food');
 				sum = this.foodSpending.reduce(addFun, 0);
 				foodEl.textContent = `$${sum}`;
+				console.log('food');
 				return sum;
 		}
 	}
 	//method to get total for amount spent
 	getTotalSpending() {
-		let totalEl = document.querySelector('#expense-amount');
+		let totalEl = document.getElementById('expense-amount');
 		let totalSpending =
 			this.getSpending('ent') +
 			this.getSpending('clothing') +
@@ -70,32 +74,31 @@ class spending {
 	}
 	// method to take weekly budget minus spending and get what is left in the budget
 	getAmountLeft() {
-		let budget = document.querySelector('#weeklyBudget').value;
-		let remainingEl = document.querySelector('#bank-amount');
-		let amountLeft = budget - this.getTotalSpending().toFixed(2);
+		let budget = document.getElementById('weeklyBudget').value;
+		let remainingEl = document.getElementById('bank-amount');
+		let amountLeft = budget - this.getTotalSpending();
 		remainingEl.textContent = amountLeft;
 		return amountLeft;
 	}
 }
 
 // HTML Element of the nameInput of user to update h1 header with customer name.
-let nameInput = document.querySelector('#name');
+let nameInput = document.getElementById('name');
 
 // Creating an object of new user
 let User = new spending();
 
 // add is the button element that submits new expense
-let add = document.querySelector('#add');
+let add = document.getElementById('add');
 
 // selectItems is the dropDown Element that selects the category item element
-let selectItems = document.querySelector('#category');
+let selectItems = document.getElementById('category');
 
 // This hint should show a hint on  the webpage if there is invalid action by user.
-let hintEL = document.querySelector('#amountHint');
+let hintEL = document.getElementById('amountHint');
 
 //weekly budget to use everywhere
-let weeklyBudget = document.querySelector('#weeklyBudget');
-
+let weeklyBudget = document.getElementById('weeklyBudget');
 // This function will add the name entered by user in the page h1 element and budget into span below.
 // Also checks if input was entered into name and budget inputs
 // If the budget changes it will update the document
@@ -104,7 +107,7 @@ function addName() {
 	let nameChange = nameInput.value;
 	let weeklyBudgetValue = Number(weeklyBudget.value);
 	let heading = document.querySelector('h1');
-	let budgetEl = document.querySelector('#span');
+	let budgetEl = document.getElementById('span');
 
 	if (nameChange === '') {
 		hintEL.textContent = 'Please enter your name first.';
@@ -113,7 +116,7 @@ function addName() {
 	} else {
 		hintEL.textContent = '';
 		heading.textContent = `Hello, ${nameChange}`;
-		budgetEl.textContent = `Weekly Budget: $${weeklyBudgetValue}`;
+		budgetEl.textContent = `$${User.getAmountLeft()}`;
 	}
 }
 
@@ -121,8 +124,8 @@ function addName() {
 
 function main() {
 	// amount variable will store the amount entered as an expense
-	let amountStr = document.querySelector('#amount').value;
-	let amount = parseInt(amountStr);
+	let amountStr = document.getElementById('amount').value;
+	let amount = Number(amountStr);
 
 	// selectedItem will store the category entered with expense amount.
 	let selectedItem = selectItems.options[selectItems.selectedIndex].value;
@@ -164,5 +167,4 @@ function main() {
 }
 
 // Adding an event Listener to trigger every time a user is adding new expense.
-add.addEventListener('click', main);
-add.addEventListener('click', addName);
+add.addEventListener('click', main, false);

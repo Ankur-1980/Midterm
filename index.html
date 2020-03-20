@@ -10,16 +10,16 @@
 <body>
     <div class="">
         <h1></h1>
-        <p>
-            <input id="name" placeholder="Enter you name" />
-            <input id="weeklyBudget" placeholder="0" />
+            <form>
+                <input id="name" placeholder="Enter you name" />
+                <input id="weeklyBudget" placeholder="0" />
+            </form>
             <button onclick=addName()>Submit</button>
-        </p>
         <div id="span"> Weekly Budget: $ </div>
-        <form action="https://www.google.com/" method="get"></form>
-        <div id="page">
+          <div id="page">
             <h2>Purchases </h2>
             <p>Pick Category:</p>
+          <form>
             <select name="category" id="category">
                 <option value="ent" name="type" selected="selected">Entertainment</option>
                 <option value="food">food</option>
@@ -39,7 +39,7 @@
                         <li>Entertainment:</li>
                         <li>Food:</li>
                         <li>Clothing:</li>
-                        <li>Bills:</li>
+                        <li>Bills</li>
                     </ul>
                 </div>
                 <div>
