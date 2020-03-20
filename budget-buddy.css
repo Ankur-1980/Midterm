@@ -1,0 +1,77 @@
+body {
+    background-color: darkgrey;
+    /*cursor: url(https://www.google.com/imgres?imgurl=http%3A%2F%2Fclipart-library.com%2Fimg%2F785374.jpg&imgrefurl=http%3A%2F%2Fclipart-library.com%2Fdollar-sign-cliparts.html&tbnid=Z0qvjwRdZ_mqYM&vet=12ahUKEwid15ng_KnoAhUW3awKHbn6BiIQMygDegUIARD4AQ..i&docid=G6BLvM41A6icgM&w=4500&h=4500&q=small%20dollar%20sign%20image&hl=en&ved=2ahUKEwid15ng_KnoAhUW3awKHbn6BiIQMygDegUIARD4AQ), pointer;
+*/
+}
+
+/*For Enter Your Name, Weekly Budget, and Submit*/
+.name {
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+/*PURCHASES*/
+h2 {
+    width: 20vw;
+    font-size: 45px;
+}
+
+#page {
+    padding: 100px 50px 50px 0px;
+}
+/*"Pick a Category"*/
+.category {
+    width: 20vw;
+    font-size: 30px;
+}
+/*Category form*/
+#category {
+    width: 20vw;
+    font-size: 25px;
+}
+
+/*Amount spent*/
+#amount {
+    width: 20vw;
+    font-size: 25px;
+}
+
+.expenseBox {
+    width: 100vw;
+    font-size: 1.5em;
+}
+
+#entertainment {
+    padding-right: 120px;
+}
+
+#food {
+    padding-right: 25px;
+}
+
+#clothing {
+    padding-right: 50px;
+}
+
+/*For total expenses category and final budget*/
+.title {
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.money {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.budget {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#finalCount {
+    display: flex;
+    justify-content: flex-end;
+}
