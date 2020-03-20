@@ -36,28 +36,24 @@ class spending {
 				let entEl = document.getElementById('entertainment');
 				sum = this.entSpending.reduce(addFun, 0);
 				entEl.textContent = `$${sum}`;
-				console.log('entertainment');
 				return sum;
 
 			case 'clothing':
 				let clothingEl = document.getElementById('clothing');
 				sum = this.clothingSpending.reduce(addFun, 0);
 				clothingEl.textContent = `$${sum}`;
-				console.log('clothing');
 				return sum;
 
 			case 'bills':
 				let billsEl = document.getElementById('bills');
 				sum = this.billsSpending.reduce(addFun, 0);
 				billsEl.textContent = `$${sum}`;
-				console.log('bills');
 				return sum;
 
 			case 'food':
 				let foodEl = document.getElementById('food');
 				sum = this.foodSpending.reduce(addFun, 0);
 				foodEl.textContent = `$${sum}`;
-				console.log('food');
 				return sum;
 		}
 	}
