@@ -65,7 +65,7 @@ class spending {
 			this.getSpending('clothing') +
 			this.getSpending('bills') +
 			this.getSpending('food');
-		totalEl.textContent = totalSpending;
+		totalEl.textContent = `$${totalSpending}`;
 		return totalSpending;
 	}
 	// method to take weekly budget minus spending and get what is left in the budget
@@ -73,7 +73,7 @@ class spending {
 		let budget = document.querySelector('#weekly-budget').value;
 		let remainingEl = document.querySelector('#bank-amount');
 		let amountLeft = budget - this.getTotalSpending();
-		remainingEl.textContent = amountLeft;
+		remainingEl.textContent = `$${amountLeft}`;
 		return amountLeft;
 	}
 }
@@ -109,9 +109,21 @@ function addName(event) {
 	let budgetEl = document.querySelector('#starting-budget');
 
 	if (nameChange === '') {
-		nameBudgetWarning.textContent = 'Please enter your name first.';
+		nameInput.classList.toggle('warning');
+		nameInput.placeholder = 'Please enter your name';
+		// error message goes away after 3 secs
+		setTimeout(function() {
+			nameInput.classList.toggle('warning');
+			nameInput.placeholder = 'Enter your name';
+		}, 3000);
 	} else if (weeklyBudgetValue === '' || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
-		nameBudgetWarning.textContent = 'Please enter your budget with a number bigger than 0';
+		weeklyBudget.classList.toggle('warning');
+		weeklyBudget.placeholder = 'Please enter a valid amount';
+		// error message goes away after 3 secs
+		setTimeout(function() {
+			weeklyBudget.classList.toggle('warning');
+			weeklyBudget.placeholder = 'Enter your weekly budget';
+		}, 3000);
 	} else {
 		nameBudgetWarning.textContent = '';
 		heading.textContent = `Hello, ${nameChange}`;
@@ -124,6 +136,7 @@ function addName(event) {
 function main(event) {
 	event.preventDefault();
 	// amount variable will store the amount entered as an expense
+	let amountWarn = document.querySelector('.warn');
 	let amountStr = document.getElementById('amount').value;
 	let amount = Number(amountStr);
 
@@ -136,9 +149,21 @@ function main(event) {
 	// It will also return the total spending across all categories.
 
 	if (amount < 1 || isNaN(amount)) {
-		categoryWarning.textContent = 'Please Enter a number bigger than 0';
+		amountWarn.classList.toggle('warning');
+		amountWarn.innerHTML = 'Please enter a number greater than zero';
+		// error message goes away after 3 secs
+		setTimeout(function() {
+			amountWarn.classList.toggle('warning');
+			amountWarn.innerHTML = '';
+		}, 3000);
 	} else if (amount > User.getAmountLeft()) {
-		categoryWarning.textContent = "You don't have sufficient funds for this transaction"; //alert if insufficient funds
+		amountWarn.classList.toggle('warning');
+		amountWarn.innerHTML = 'You have insufficient funds for this purchase';
+		// error message goes away after 3 secs
+		setTimeout(function() {
+			amountWarn.classList.toggle('warning');
+			amountWarn.innerHTML = '';
+		}, 3000);
 	} else if (selectedItem === 'food') {
 		categoryWarning.textContent = '';
 		User.addFoodSpending(amount);
