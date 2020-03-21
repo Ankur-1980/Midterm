@@ -71,7 +71,7 @@ class spending {
 	// method to take weekly budget minus spending and get what is left in the budget
 	getAmountLeft() {
 		let budget = document.querySelector('#weekly-budget').value;
-		let remainingEl = document.querySelector('##bank-amount');
+		let remainingEl = document.querySelector('#bank-amount');
 		let amountLeft = budget - this.getTotalSpending();
 		remainingEl.textContent = amountLeft;
 		return amountLeft;
@@ -85,7 +85,8 @@ let nameInput = document.querySelector('#name');
 let User = new spending();
 
 // add is the button element that submits new expense
-let add = document.getElementById('add');
+let expense = document.querySelector('#expense');
+let nameBudget = document.querySelector('#add-name-budget');
 
 // selectItems is the dropDown Element that selects the category item element
 let selectItems = document.querySelector('#categories-select');
@@ -95,16 +96,17 @@ let nameBudgetWarning = document.getElementById('name-budget-warning');
 let categoryWarning = document.getElementById('category-warning');
 
 //weekly budget to use everywhere
-let weeklyBudget = document.querySelector('weekly-budget');
+let weeklyBudget = document.querySelector('#weekly-budget');
 // This function will add the name entered by user in the page h1 element and budget into span below.
 // Also checks if input was entered into name and budget inputs
 // If the budget changes it will update the document
 
-function addName() {
+function addName(event) {
+	event.preventDefault();
 	let nameChange = nameInput.value;
 	let weeklyBudgetValue = Number(weeklyBudget.value);
-	let heading = document.querySelector('h1');
-	let budgetEl = document.getElementById('span');
+	let heading = document.querySelector('#greeting');
+	let budgetEl = document.querySelector('#starting-budget');
 
 	if (nameChange === '') {
 		nameBudgetWarning.textContent = 'Please enter your name first.';
@@ -113,13 +115,14 @@ function addName() {
 	} else {
 		nameBudgetWarning.textContent = '';
 		heading.textContent = `Hello, ${nameChange}`;
-		budgetEl.textContent = `$${User.getAmountLeft()}`;
+		budgetEl.textContent = `Weekly Budget $${User.getAmountLeft()}`;
 	}
 }
 
 //  function to get the total amount from all categories
 
-function main() {
+function main(event) {
+	event.preventDefault();
 	// amount variable will store the amount entered as an expense
 	let amountStr = document.getElementById('amount').value;
 	let amount = Number(amountStr);
@@ -164,5 +167,7 @@ function main() {
 }
 
 // Adding an event Listener to trigger every time a user is adding new expense.
-add.addEventListener('click', main, false);
-add.addEventListener('click', submit, false);
+// add.addEventListener('click', main, false);
+// add.addEventListener('submit', main, false);
+nameBudget.addEventListener('click', addName, false);
+expense.addEventListener('click', main, false);
