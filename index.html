@@ -8,55 +8,85 @@
     <link rel="stylesheet" href="budget-buddy.css">
 </head>
 <body>
-        <div class="name">
-        <h1></h1>
-        <p>
+    <h1>Budget Buddy Midterm</h1>
+    <h2 id="name"></h2>
+       
+        <div id="name-budget-warning" style="color: red;"></div>
+        <div id="category-warning" style="color: red;"></div>
+            
+        <form>            
+            <label>Name</label>
             <input id="name" placeholder="Enter your name" />
-            <input id="weeklyBudget" placeholder="0" />
+            <label>Weekly Budget</label>
+            <input id="weeklyBudget" placeholder="Enter Your Weekly Budget" />
             <button onclick=addName()>Submit</button>
-        </p>
-        <div id="span"> Weekly Budget: $ </div>
-        </div>
-    <form></form>
-    <div id="page">
+         </form>
+        
+        <div id="weekly-budget"> Weekly Budget: $ </div>
+    
+    <div id="input-form">
             <h2>Purchases </h2>
-            <div class="category">
-            <p>Pick a category</p>
+         <form>
+             <div id="form-control">
+                <label>
+                    <h3>
+                        Select a Category
+                    </h3>
+                </label>
+                <select name="categories" id="categories-select" required>
+                    <option value="" disabled hidden selected>
+                        Categories
+                    </option>>
+                    <option value="ent" name="type">
+                        Entertainment
+                    </option>
+                    <option value="food">
+                        Food
+                    </option>
+                    <option value="clothing">
+                        Clothing
+                    </option>
+                    <option value="bills">
+                        Bills
+                    </option>
+                </select>
+             </div>
+            <div class="form-control">
+                <input id="amount" placeholder="Cost" />
             </div>
-            <select name="category" id="category">
-                <option value="ent" name="type" selected="selected">Entertainment</option>
-                <option value="food">food</option>
-                <option value="clothing">clothing</option>
-                <option value="bills">bills</option>
-            </select>
-        <input id="amount" placeholder="Cost" />
-        <input type="submit" value="Add" id="add">
-    </div>
-        <div id="amountHint" style="color: red;"></div>
-        </form>
+            <input type="submit" value="Add" id="add">
+         </form>
+        
+
+    </div>      
         <div class="largeBox">
             <div class="expenseBox" id="expense-list">
-                <table id="expensesList">
-                    <TR>
-                        <td>Entertainment</td>
-                        <td>Food</td>
-                        <td>Clothing</td>
-                        <td>Bills</td>
-                        </TR>
-                </table>
-                <table id="amountList">
-                    <TR>
-                        <td id="entertainment">$0</td>
-                        <td id="food">$0</td>
-                        <td id="clothing">$0</td>
-                        <td id="bills">$0</td>
-                        </TR>
-                </table>
-                </div>
+                    <h3><span id="entertainment">$0</span></h3>
+                    <h3><span id="food">$0</span></h3>
+                    <h3><span id="clothing">$0</span></h3>
+                    <h3><span id="bills">$0</span></h3>
+
+                      <h3 id="entertainment"><span></span>$0</h3>
+                        <h3 id="food">$0</h3>
+                        <h3 id="clothing">$0</h3>
+                        <h3 id="bills">$0</h3>
+                 
             </div>
         </div>
-        </div>
-                <table id="finalCount">
+        <section class="amounts neu-box" id="balance">
+            <h2>Balance</h2>
+            <p class="money" id="balance-p">
+                $
+                <span id="balance-text"></span>
+            </p>
+        </section>
+        <section class="amounts" id="balance">
+            <h2>Balance</h2>
+            <p class="money" id="balance-p">
+                $
+                <span id="balance-text"></span>
+            </p>
+        </section>
                     <div class="budget">
                         <tr><p class="title">Total Expenses</p>
                         <tr><p class="money"><span>$</span><span id="expense-amount">0</span></p>

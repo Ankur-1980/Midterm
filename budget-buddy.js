@@ -70,7 +70,7 @@ class spending {
 	}
 	// method to take weekly budget minus spending and get what is left in the budget
 	getAmountLeft() {
-		let budget = document.getElementById('weeklyBudget').value;
+		let budget = document.getElementById('weekly-budget').value;
 		let remainingEl = document.getElementById('bank-amount');
 		let amountLeft = budget - this.getTotalSpending();
 		remainingEl.textContent = amountLeft;
@@ -79,7 +79,7 @@ class spending {
 }
 
 // HTML Element of the nameInput of user to update h1 header with customer name.
-let nameInput = document.getElementById('name');
+let nameInput = document.querySelector('#name');
 
 // Creating an object of new user
 let User = new spending();
@@ -88,10 +88,11 @@ let User = new spending();
 let add = document.getElementById('add');
 
 // selectItems is the dropDown Element that selects the category item element
-let selectItems = document.getElementById('category');
+let selectItems = document.querySelector('#categories-select');
 
 // This hint should show a hint on  the webpage if there is invalid action by user.
-let hintEL = document.getElementById('amountHint');
+let nameBudgetWarning = document.getElementById('name-budget-warning');
+let categoryWarning = document.getElementById('category-warning');
 
 //weekly budget to use everywhere
 let weeklyBudget = document.getElementById('weeklyBudget');
@@ -106,11 +107,11 @@ function addName() {
 	let budgetEl = document.getElementById('span');
 
 	if (nameChange === '') {
-		hintEL.textContent = 'Please enter your name first.';
+		nameBudgetWarning.textContent = 'Please enter your name first.';
 	} else if (weeklyBudgetValue === '' || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
-		hintEL.textContent = 'Please enter your budget with a number bigger than 0';
+		nameBudgetWarning.textContent = 'Please enter your budget with a number bigger than 0';
 	} else {
-		hintEL.textContent = '';
+		nameBudgetWarning.textContent = '';
 		heading.textContent = `Hello, ${nameChange}`;
 		budgetEl.textContent = `$${User.getAmountLeft()}`;
 	}
@@ -132,29 +133,29 @@ function main() {
 	// It will also return the total spending across all categories.
 
 	if (amount < 1 || isNaN(amount)) {
-		hintEL.textContent = 'Please Enter a number bigger than 0';
+		categoryWarning.textContent = 'Please Enter a number bigger than 0';
 	} else if (amount > User.getAmountLeft()) {
-		hintEL.textContent = "You don't have sufficient funds for this transaction"; //alert if insufficient funds
+		categoryWarning.textContent = "You don't have sufficient funds for this transaction"; //alert if insufficient funds
 	} else if (selectedItem === 'food') {
-		hintEL.textContent = '';
+		categoryWarning.textContent = '';
 		User.addFoodSpending(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'bills') {
-		hintEL.textContent = '';
+		categoryWarning.textContent = '';
 		User.addBillsSpending(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'ent') {
-		hintEL.textContent = '';
+		categoryWarning.textContent = '';
 		User.addEntSpending(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'clothing') {
-		hintEL.textContent = '';
+		categoryWarning.textContent = '';
 		User.addClothingSpending(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
