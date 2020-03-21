@@ -59,7 +59,7 @@ class spending {
 	}
 	//method to get total for amount spent
 	getTotalSpending() {
-		let totalEl = document.getElementById('expense-amount');
+		let totalEl = document.querySelector('#expense-amount');
 		let totalSpending =
 			this.getSpending('ent') +
 			this.getSpending('clothing') +
@@ -70,8 +70,8 @@ class spending {
 	}
 	// method to take weekly budget minus spending and get what is left in the budget
 	getAmountLeft() {
-		let budget = document.getElementById('weekly-budget').value;
-		let remainingEl = document.getElementById('bank-amount');
+		let budget = document.querySelector('#weekly-budget').value;
+		let remainingEl = document.querySelector('##bank-amount');
 		let amountLeft = budget - this.getTotalSpending();
 		remainingEl.textContent = amountLeft;
 		return amountLeft;
@@ -95,7 +95,7 @@ let nameBudgetWarning = document.getElementById('name-budget-warning');
 let categoryWarning = document.getElementById('category-warning');
 
 //weekly budget to use everywhere
-let weeklyBudget = document.getElementById('weeklyBudget');
+let weeklyBudget = document.querySelector('weekly-budget');
 // This function will add the name entered by user in the page h1 element and budget into span below.
 // Also checks if input was entered into name and budget inputs
 // If the budget changes it will update the document
@@ -165,3 +165,4 @@ function main() {
 
 // Adding an event Listener to trigger every time a user is adding new expense.
 add.addEventListener('click', main, false);
+add.addEventListener('click', submit, false);
