@@ -9,6 +9,7 @@ body {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	background-color: #999999;
 	color: #2a2b2b;
+	cursor: url(./oth192.cur), pointer;
 }
 
 h2 {
