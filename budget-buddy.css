@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: #999999;
+	color: #2a2b2b;
+	cursor: url(./oth192.cur), pointer;
+}
+
+h2 {
+	font-size: 1.75rem;
+	text-transform: uppercase;
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#grid-container {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+	height: 100vh;
+}
+
+.boxes {
+	border: 1px solid black;
+	padding: 40px;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #aaa;
+	box-shadow: -5px -5px 15px rgba(177, 176, 176, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+header {
+	grid-area: 1 / 1 / 2 / 5;
+}
+
+.warning {
+	background-color: #f3867a;
+}
+
+.warning::placeholder {
+	color: #d11203;
+}
+
+select,
+input,
+button {
+	display: block;
+	font-size: 0.8em;
+	height: 30px;
+	border-radius: 20px;
+	padding: 10px;
+	width: 100%;
+	margin: 10px auto;
+	border: none;
+}
+
+.cat-amounts > span {
+	font-size: 1.5rem;
+}
+
+#starting-budget {
+	grid-area: 2 / 2 / 3 / 4;
+	font-size: 2rem;
+}
+
+#budget-form {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+#input-form {
+	grid-area: 3 / 3 / 4 / 4;
+}
+
+#expense-cat {
+	grid-area: 4 / 1 / 5 / 3;
+}
+
+#remaining-cat {
+	grid-area: 4 / 3 / 5 / 5;
+}
+
+#ent-cat {
+	grid-area: 5 / 1 / 6 / 2;
+}
+
+#food-cat {
+	grid-area: 5 / 2 / 6 / 3;
+}
+
+#clothing-cat {
+	grid-area: 5 / 3 / 6 / 4;
+}
+
+#bills-cat {
+	grid-area: 5 / 4 / 6 / 5;
+}
