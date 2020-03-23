@@ -1,131 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="budget-buddy-responsive.css" />
-		<title>My Budget Buddy</title>
-	</head>
-	<body>
-		<div class="main-container">
-			<div class="grid-container">
-				<header class="main-title">
-					<h1>My Budget Buddy</h1>
-				</header>
-				<!-- input form -->
-				<section class="main-row" id="input-form">
-					<h2>Add New Transaction</h2>
-					<form id="transaction-form">
-						<div class="form-control">
-							<!-- dropdown menu -->
-							<div class="inc-exp-select">
-								<label for=""></label>
-								<select name="categories" id="categories-select" required>
-									<option value="" disabled hidden selected>Categories</option>
-									<option value="income">Income</option>
-									<option value="entertainment">Entertainment</option>
-									<option value="food">Food</option>
-									<option value="clothing">Clothing</option>
-									<option value="bills">Bills</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-control">
-							<label for="description"><h3>Description</h3> </label>
-							<input type="text" id="description-input" placeholder="Enter Description" />
-						</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="budget-buddy-responsive.css" />
+    <title>My Budget Buddy</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="grid-container">
+        <header class="main-title">
+          <h1>My Budget Buddy</h1>
+        </header>
+        <!-- input form -->
+        <section class="main-row" id="input-form">
+          <h2>Add New Transaction</h2>
+          <form id="transaction-form">
+            <div class="form-control">
+              <!-- dropdown menu -->
+              <div class="inc-exp-select">
+                <label for=""></label>
+                <select name="categories" id="categories-select" required>
+                  <option value="" disabled hidden selected>Categories</option>
+                  <option value="income">Income</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="food">Food</option>
+                  <option value="clothing">Clothing</option>
+                  <option value="bills">Bills</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="description"><h3>Description</h3> </label>
+              <input
+                type="text"
+                id="description-input"
+                placeholder="Enter Description"
+              />
+            </div>
 
-						<div class="form-control">
-							<label for="amount-value"><h3>Amount</h3></label>
-							<p>(Income - positive - Expense - negative)</p>
-							<input type="text" id="amount-input" placeholder="Enter an amount" value="" />
-						</div>
-						<button type="submit" id="btn">Add Transaction</button>
-					</form>
-				</section>
-				<section class="amounts main-row" id="balance">
-					<h4>Balance</h4>
-					<p id="balance-text" class="money">+$0.00</p>
-				</section>
-				<section class="amounts main-row" id="income">
-					<h4>Income</h4>
-					<p id="income-text" class="money plus">+$0.00</p>
-				</section>
-				<section class="amounts main-row" id="expenses">
-					<h4>Expenses</h4>
-					<p id="expenses-text" class="money minus">-$0.00</p>
-				</section>
-				<section id="history-container">
-					<h3>History</h3>
-					<h4>Total: $0.00</h4>
-					<ul id="history-list">
-						<li class="plus">Cash <span>-$400</span><button class="delete-btn">x</button></li>
-						<li class="minus">Cash <span>-$400</span><button class="delete-btn">x</button></li>
-						<li class="plus">item1 category price</li>
-						<li class="minus">item2 category price</li>
-						<li class="minus">item3 category price</li>
-						<li class="minus">item4 category price</li>
-						<li class="plus">item5 category price</li>
-						<li class="minus">item6 category price</li>
+            <div class="form-control">
+              <label for="amount-value"><h3>Amount</h3></label>
+              <p>(Income - positive - Expense - negative)</p>
+              <input
+                type="text"
+                id="amount-input"
+                placeholder="Enter an amount"
+                value=""
+              />
+            </div>
+            <button type="submit" id="btn">Add Transaction</button>
+          </form>
+        </section>
+        <section class="amounts main-row" id="balance">
+          <h4>Balance</h4>
+          <p id="balance-text" class="money">+$0.00</p>
+        </section>
+        <section class="amounts main-row" id="income">
+          <h4>Income</h4>
+          <p id="income-text" class="money plus">+$0.00</p>
+        </section>
+        <section class="amounts main-row" id="expenses">
+          <h4>Expenses</h4>
+          <p id="expenses-text" class="money minus">-$0.00</p>
+        </section>
+        <section id="history-container">
+          <h3>History</h3>
+          <h4>Total: $0.00</h4>
+          <ul id="history-list">
+            <li class="plus">
+              Cash <span>-$400</span><button class="delete-btn">x</button>
+            </li>
+            <li class="minus">
+              Cash <span>-$400</span><button class="delete-btn">x</button>
+            </li>
+            <li class="plus">item1 category price</li>
+            <li class="minus">item2 category price</li>
+            <li class="minus">item3 category price</li>
+            <li class="minus">item4 category price</li>
+            <li class="plus">item5 category price</li>
+            <li class="minus">item6 category price</li>
 
-						<!-- <li class="plus">Cash <span>-$400</span><button class="delete-btn">x</button></li> -->
-					</ul>
-				</section>
-				<section id="categories-container">
-					<section class="categories">
-						<h5>Income<span id="inc-total">$000</span></h5>
-						<ul class="cat-list" id="inc-list">
-							<li>Movies - $ Money Spent</li>
-							<li>Movies - $ Money Spent</li>
-							<li>Movies - $ Money Spent</li>
-						</ul>
-					</section>
-					<section class="categories">
-						<h5>Entertainment<span id="ent-total">$000</span></h5>
-						<ul class="cat-list" id="ent-list">
-							<li>Movies - $ Money Spent</li>
-							<li>Movies - $ Money Spent</li>
-							<li>Movies - $ Money Spent</li>
-						</ul>
-					</section>
-					<section class="categories">
-						<h5>Food<span id="food-total">$000</span></h5>
-						<ul class="cat-list" id="food-list">
-							<li>Dinner - $ Money Spent</li>
-							<li>Dinner - $ Money Spent</li>
-							<li>Dinner - $ Money Spent</li>
-						</ul>
-					</section>
-					<section class="categories">
-						<h5>Clothing<span id="clothing-total">$000</span></h5>
-						<ul class="cat-list" id="clothing-list">
-							<li>Shirts - $ Money Spent</li>
-							<li>Shirts - $ Money Spent</li>
-							<li>Shirts - $ Money Spent</li>
-						</ul>
-					</section>
-					<section class="categories">
-						<h5>Bills<span id="bills-total">$000</span></h5>
-						<ul class="cat-list" id="bills-list">
-							<li>Cell Phone - $ Money Spent</li>
-							<li>Cell Phone - $ Money Spent</li>
-							<li>Cell Phone - $ Money Spent</li>
-						</ul>
-					</section>
-				</section>
+            <!-- <li class="plus">Cash <span>-$400</span><button class="delete-btn">x</button></li> -->
+          </ul>
+        </section>
+        <section id="categories-container">
+          <section class="categories">
+            <h5>Income<span id="inc-total">$000</span></h5>
+            <ul class="cat-list" id="inc-list">
+              <li>Movies - $ Money Spent</li>
+              <li>Movies - $ Money Spent</li>
+              <li>Movies - $ Money Spent</li>
+            </ul>
+          </section>
+          <section class="categories">
+            <h5>Entertainment<span id="ent-total">$000</span></h5>
+            <ul class="cat-list" id="ent-list">
+              <li>Movies - $ Money Spent</li>
+              <li>Movies - $ Money Spent</li>
+              <li>Movies - $ Money Spent</li>
+            </ul>
+          </section>
+          <section class="categories">
+            <h5>Food<span id="food-total">$000</span></h5>
+            <ul class="cat-list" id="food-list">
+              <li>Dinner - $ Money Spent</li>
+              <li>Dinner - $ Money Spent</li>
+              <li>Dinner - $ Money Spent</li>
+            </ul>
+          </section>
+          <section class="categories">
+            <h5>Clothing<span id="clothing-total">$000</span></h5>
+            <ul class="cat-list" id="clothing-list">
+              <li>Shirts - $ Money Spent</li>
+              <li>Shirts - $ Money Spent</li>
+              <li>Shirts - $ Money Spent</li>
+            </ul>
+          </section>
+          <section class="categories">
+            <h5>Bills<span id="bills-total">$000</span></h5>
+            <ul class="cat-list" id="bills-list">
+              <li>Cell Phone - $ Money Spent</li>
+              <li>Cell Phone - $ Money Spent</li>
+              <li>Cell Phone - $ Money Spent</li>
+            </ul>
+          </section>
+        </section>
 
-				<footer>
-					<p>created, designed & coded by LIFO The Party</p>
-					<p>
-						<a href="mailto:ceceliacshelley@gmail.com">Cecelia Shelly</a>
-						<a href="mailto:chelsswylie@gmail.com">Chelsea Wylie</a>
-						<a href="mailto:ivona.ivezaj@gmail.com">Ivona Gojcaj</a>
-						<a href="mailto:vasavada.ankur@gmail.com">Ankur Vasavada</a>
-					</p>
-				</footer>
-			</div>
-		</div>
+        <footer>
+          <p>created, designed & coded by LIFO The Party</p>
+          <p>
+            <a href="mailto:ceceliacshelley@gmail.com">Cecelia Shelly</a>
+            <a href="mailto:chelsswylie@gmail.com">Chelsea Wylie</a>
+            <a href="mailto:ivona.ivezaj@gmail.com">Ivona Gojcaj</a>
+            <a href="mailto:vasavada.ankur@gmail.com">Ankur Vasavada</a>
+          </p>
+        </footer>
+      </div>
+    </div>
 
-		<script src="budget-buddy.js"></script>
-	</body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Balance can not be under 0.</p>
+      </div>
+    </div>
+
+    <script src="budget-buddy.js"></script>
+  </body>
 </html>
