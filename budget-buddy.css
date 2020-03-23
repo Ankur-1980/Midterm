@@ -43,6 +43,10 @@ h1 {
 	font-size: 2.5rem;
 }
 
+h3 {
+	font-size: 1.75rem;
+}
+
 header {
 	grid-area: 1 / 1 / 2 / 5;
 	text-align: center;
@@ -64,9 +68,18 @@ button {
 	height: 30px;
 	border-radius: 20px;
 	padding: 5px;
-	width: 100%;
 	margin: 10px auto;
 	border: none;
+	width: 100%;
+}
+
+input::placeholder {
+	color: #6c7b95;
+}
+
+button,
+select {
+	color: #6c7b95;
 }
 
 .cat-amounts > span {
