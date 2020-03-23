@@ -196,3 +196,14 @@ function main(event) {
 // add.addEventListener('submit', main, false);
 nameBudget.addEventListener('click', addName, false);
 expense.addEventListener('click', main, false);
+
+// cecelia's code
+// // Get the modal
+// const modal = document.getElementById("myModal");
+// // Get the <span> element that closes the modal
+// const span = document.getElementsByClassName("close")[0];
+
+// span.onclick = function() {
+//   modal.style.display = "none";
+// };
+// //  modal.style.display = "block";
