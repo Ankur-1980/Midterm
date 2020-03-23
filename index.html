@@ -8,114 +8,105 @@
 		<link rel="stylesheet" href="budget-buddy.css" />
 	</head>
 	<body>
-		<div class="main-container">
-			<div id="grid-container">
-				<!-- main title -->
-				<header class="boxes">
-					<h1 id="greeting">Budget Buddy Midterm</h1>
-				</header>
+		<div id="grid-container">
+			<!-- main title -->
+			<header>
+				<h1 id="greeting">Budget Buddy Midterm</h1>
+			</header>
 
-				<!-- warnings and greeting -->
-				<div id="secret">
-					<div id="name-budget-warning" style="color: red;"></div>
-					<div id="category-warning" style="color: red;"></div>
+			<!-- warnings and greeting -->
+			<div id="secret">
+				<div id="name-budget-warning" style="color: red;"></div>
+				<div id="category-warning" style="color: red;"></div>
+			</div>
+			<!-- name and budget form -->
+			<form class="boxes" id="budget-form">
+				<div id="form-control">
+					<label><h3>Name</h3></label>
+					<input id="name" placeholder="Enter your name" />
 				</div>
-				<!-- name and budget form -->
-				<form class="boxes" id="budget-form">
-					<div id="form-control">
-						<label><h3>Name</h3></label>
-						<input id="name" placeholder="Enter your name" />
-					</div>
-					<div id="form-control">
-						<label><h3>Weekly Budget</h3></label>
-						<input id="weekly-budget" placeholder="Enter your weekly budget" />
-					</div>
+				<div id="form-control">
+					<label><h3>Weekly Budget</h3></label>
+					<input id="weekly-budget" placeholder="Enter your weekly budget" />
+				</div>
 
-					<button id="add-name-budget">Submit</button>
+				<button id="add-name-budget">Submit</button>
+			</form>
+
+			<div class="boxes" id="starting-budget">Weekly Budget: $0</div>
+			<!-- expense input form -->
+			<section class="boxes" id="input-form">
+				<!-- <h2>Purchases</h2> -->
+				<form>
+					<div id="form-control">
+						<label>
+							<h3>
+								Select a Category
+							</h3>
+						</label>
+						<!-- category dropdown menu -->
+						<select name="categories" id="categories-select" required>
+							<option value="ent" name="type">
+								Entertainment
+							</option>
+							<option value="food">
+								Food
+							</option>
+							<option value="clothing">
+								Clothing
+							</option>
+							<option value="bills">
+								Bills
+							</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<input id="amount" placeholder="Cost" />
+					</div>
+					<button type="submit" value="Add" id="expense">
+						Add
+					</button>
+					<p class="warn"></p>
 				</form>
-
-				<div class="boxes" id="starting-budget">Weekly Budget: $</div>
-				<!-- expense input form -->
-				<section class="boxes" id="input-form">
-					<!-- <h2>Purchases</h2> -->
-					<form>
-						<div id="form-control">
-							<label>
-								<h3>
-									Select a Category
-								</h3>
-							</label>
-							<!-- category dropdown menu -->
-							<select name="categories" id="categories-select" required>
-								<option value="ent" name="type">
-									Entertainment
-								</option>
-								<option value="food">
-									Food
-								</option>
-								<option value="clothing">
-									Clothing
-								</option>
-								<option value="bills">
-									Bills
-								</option>
-							</select>
-						</div>
-						<div class="form-control">
-							<input id="amount" placeholder="Cost" />
-						</div>
-						<button type="submit" value="Add" id="expense">
-							Add
-						</button>
-						<p class="warn"></p>
-					</form>
-				</section>
-				<!-- running totals -->
-				<section class="boxes" id="ent-cat">
-					<h2>Entertainment</h2>
-					<p class="cat-amounts money">
-						<span id="entertainment">0</span>
-					</p>
-				</section>
-				<section class="boxes" id="food-cat">
-					<h2>Food</h2>
-					<p class="cat-amounts money">
-						<span id="food">0</span>
-					</p>
-				</section>
-				<section class="boxes" id="clothing-cat">
-					<h2>Clothing</h2>
-					<p class="cat-amounts money">
-						<span id="clothing">0</span>
-					</p>
-				</section>
-				<section class="boxes" id="bills-cat">
-					<h2>Bills</h2>
-					<p class="cat-amounts money">
-						<span id="bills">0</span>
-					</p>
-				</section>
-				<section class="boxes" id="expense-cat">
-					<h2>Total Expenses</h2>
-					<p class="cat-amounts money">
-						<span id="expense-amount">0</span>
-					</p>
-				</section>
-				<section class="boxes" id="remaining-cat">
-					<h2>Amount Remaining</h2>
-					<p class="cat-amounts money">
-						<span id="bank-amount">0</span>
-					</p>
-				</section>
-				<script src="budget-buddy.js"></script>
-			</div>
+			</section>
+			<!-- running totals -->
+			<section class="boxes" id="ent-cat">
+				<h2>Entertainment</h2>
+				<p class="cat-amounts money">
+					<span id="entertainment">$0</span>
+				</p>
+			</section>
+			<section class="boxes" id="food-cat">
+				<h2>Food</h2>
+				<p class="cat-amounts money">
+					<span id="food">$0</span>
+				</p>
+			</section>
+			<section class="boxes" id="clothing-cat">
+				<h2>Clothing</h2>
+				<p class="cat-amounts money">
+					<span id="clothing">$0</span>
+				</p>
+			</section>
+			<section class="boxes" id="bills-cat">
+				<h2>Bills</h2>
+				<p class="cat-amounts money">
+					<span id="bills">$0</span>
+				</p>
+			</section>
+			<section class="boxes" id="expense-cat">
+				<h2>Total Expenses</h2>
+				<p class="cat-amounts money">
+					<span id="expense-amount">$0</span>
+				</p>
+			</section>
+			<section class="boxes" id="remaining-cat">
+				<h2>Amount Remaining</h2>
+				<p class="cat-amounts money">
+					<span id="bank-amount">$0</span>
+				</p>
+			</section>
+			<script src="budget-buddy.js"></script>
 		</div>
-		<!-- The Modal -->
-		<!-- <div id="myModal" class="modal">
-			<div class="modal-content">
-				<span class="close">&times;</span>
-				<p>Balance can not be under 0.</p>
-			</div>
-		</div> -->
 	</body>
 </html>

@@ -118,11 +118,12 @@ function addName(event) {
 		}, 3000);
 	} else if (weeklyBudgetValue === '' || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
 		weeklyBudget.classList.toggle('warning');
-		weeklyBudget.placeholder = 'Please enter a valid amount';
+		weeklyBudget.value = 'Please enter a valid amount';
 		// error message goes away after 3 secs
 		setTimeout(function() {
 			weeklyBudget.classList.toggle('warning');
-			weeklyBudget.placeholder = 'Enter your weekly budget';
+			weeklyBudget.value = '';
+			// weeklyBudget.placeholder = 'Enter your weekly budget';
 		}, 3000);
 	} else {
 		nameBudgetWarning.textContent = '';
@@ -196,14 +197,3 @@ function main(event) {
 // add.addEventListener('submit', main, false);
 nameBudget.addEventListener('click', addName, false);
 expense.addEventListener('click', main, false);
-
-// cecelia's code
-// // Get the modal
-// const modal = document.getElementById("myModal");
-// // Get the <span> element that closes the modal
-// const span = document.getElementsByClassName("close")[0];
-
-// span.onclick = function() {
-//   modal.style.display = "none";
-// };
-// //  modal.style.display = "block";

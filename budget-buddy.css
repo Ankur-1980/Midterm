@@ -5,22 +5,23 @@
 	font-size: 16px;
 }
 
+*:focus {
+	outline: none;
+}
+
 body {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	background-color: #999999;
-	color: #2a2b2b;
+	background-color: #464159;
+	color: #6c7b95;
 	cursor: url(./oth192.cur), pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 h2 {
 	font-size: 1.75rem;
 	text-transform: uppercase;
-}
-
-.main-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 #grid-container {
@@ -31,12 +32,11 @@ h2 {
 }
 
 .boxes {
-	border: 1px solid black;
 	padding: 40px;
 	text-align: center;
-	border-radius: 10px;
-	background-color: #aaa;
-	box-shadow: -5px -5px 15px rgba(177, 176, 176, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	background-color: #464159;
+	box-shadow: 5px 5px 10px #3c374c, -5px -5px 10px #514b66;
 }
 
 h1 {
@@ -45,6 +45,7 @@ h1 {
 
 header {
 	grid-area: 1 / 1 / 2 / 5;
+	text-align: center;
 }
 
 .warning {
@@ -62,7 +63,7 @@ button {
 	font-size: 0.8em;
 	height: 30px;
 	border-radius: 20px;
-	padding: 10px;
+	padding: 5px;
 	width: 100%;
 	margin: 10px auto;
 	border: none;
@@ -85,12 +86,24 @@ button {
 	grid-area: 3 / 3 / 4 / 4;
 }
 
+#expense-cat,
+#remaining-cat {
+	background-color: #8bbabb;
+}
+
 #expense-cat {
 	grid-area: 4 / 1 / 5 / 3;
 }
 
 #remaining-cat {
 	grid-area: 4 / 3 / 5 / 5;
+}
+
+#ent-cat,
+#food-cat,
+#clothing-cat,
+#bills-cat {
+	background-color: #c7f0db;
 }
 
 #ent-cat {
@@ -107,42 +120,4 @@ button {
 
 #bills-cat {
 	grid-area: 5 / 4 / 6 / 5;
-}
-
-/* The Modal (background) */
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
-	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
 }
