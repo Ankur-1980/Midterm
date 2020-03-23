@@ -87,7 +87,7 @@ select {
 	color: #6c7b95;
 }
 
-.cat-amounts > span {
+.cat-amounts {
 	font-size: 1.5rem;
 }
 

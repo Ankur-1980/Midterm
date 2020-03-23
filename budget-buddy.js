@@ -33,25 +33,25 @@ class spending {
 		let sum;
 		switch (selectedItem) {
 			case 'ent':
-				let entEl = document.getElementById('entertainment');
+				let entEl = document.querySelector('#entertainment');
 				sum = this.entSpending.reduce(addFun, 0);
 				entEl.textContent = `$${sum}`;
 				return sum;
 
 			case 'clothing':
-				let clothingEl = document.getElementById('clothing');
+				let clothingEl = document.querySelector('#clothing');
 				sum = this.clothingSpending.reduce(addFun, 0);
 				clothingEl.textContent = `$${sum}`;
 				return sum;
 
 			case 'bills':
-				let billsEl = document.getElementById('bills');
+				let billsEl = document.querySelector('#bills');
 				sum = this.billsSpending.reduce(addFun, 0);
 				billsEl.textContent = `$${sum}`;
 				return sum;
 
 			case 'food':
-				let foodEl = document.getElementById('food');
+				let foodEl = document.querySelector('#food');
 				sum = this.foodSpending.reduce(addFun, 0);
 				foodEl.textContent = `$${sum}`;
 				return sum;
@@ -92,8 +92,8 @@ let nameBudget = document.querySelector('#add-name-budget');
 let selectItems = document.querySelector('#categories-select');
 
 // This hint should show a hint on  the webpage if there is invalid action by user.
-let nameBudgetWarning = document.getElementById('name-budget-warning');
-let categoryWarning = document.getElementById('category-warning');
+let nameBudgetWarning = document.querySelector('#name-budget-warning');
+let categoryWarning = document.querySelector('#category-warning');
 
 //weekly budget to use everywhere
 let weeklyBudget = document.querySelector('#weekly-budget');
@@ -138,8 +138,9 @@ function main(event) {
 	event.preventDefault();
 	// amount variable will store the amount entered as an expense
 	let amountWarn = document.querySelector('.warn');
-	let amountStr = document.getElementById('amount').value;
-	let amount = Number(amountStr);
+	let amountInput = document.querySelector('#amount');
+
+	let amount = Number(amountInput.value);
 
 	// selectedItem will store the category entered with expense amount.
 	let selectedItem = selectItems.options[selectItems.selectedIndex].value;
@@ -190,6 +191,7 @@ function main(event) {
 		User.getTotalSpending();
 		User.getAmountLeft();
 	}
+	amountInput.value = '';
 }
 
 // Adding an event Listener to trigger every time a user is adding new expense.
