@@ -101,7 +101,7 @@ select {
 
 #budget-form,
 #input-form {
-	height: 300px;
+	height: 250px;
 	width: 350px;
 }
 
@@ -120,12 +120,12 @@ select {
 #expense-cat,
 #remaining-cat {
 	height: 100px;
-	width: 350px;
 }
 
 #expense-cat,
 #remaining-cat {
 	background-color: #8bbabb;
+	width: 350px;
 }
 
 #expense-cat {
@@ -142,7 +142,9 @@ select {
 #food-cat,
 #clothing-cat,
 #bills-cat {
+	justify-self: center;
 	background-color: #c7f0db;
+	width: 250px;
 }
 
 #ent-cat {
