@@ -28,7 +28,6 @@ h2 {
 	height: 100vh;
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(4, 1fr);
 	justify-content: center;
 	align-items: center;
 }
@@ -102,7 +101,8 @@ select {
 #budget-form,
 #input-form {
 	height: 250px;
-	width: 350px;
+	width: fit-content;
+	justify-self: center;
 }
 
 #budget-form {
@@ -113,29 +113,19 @@ select {
 	grid-area: 3 / 3 / 4 / 4;
 }
 
-#ent-cat,
-#food-cat,
-#clothing-cat,
-#bills-cat,
-#expense-cat,
-#remaining-cat {
-	height: 100px;
-}
-
 #expense-cat,
 #remaining-cat {
 	background-color: #8bbabb;
-	width: 350px;
+	width: fit-content;
+	justify-self: center;
 }
 
 #expense-cat {
-	grid-area: 4 / 1 / 5 / 3;
-	justify-self: right;
+	grid-area: 4 / 2 / 5 / 3;
 }
 
 #remaining-cat {
-	grid-area: 4 / 3 / 5 / 5;
-	justify-self: left;
+	grid-area: 4 / 3 / 5 / 4;
 }
 
 #ent-cat,
@@ -161,4 +151,79 @@ select {
 
 #bills-cat {
 	grid-area: 5 / 4 / 6 / 5;
+}
+
+@media screen and (max-width: 1024px) {
+	#grid-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	header {
+		grid-area: 1 / 1/ 2 / 3;
+	}
+
+	#starting-budget {
+		grid-area: 2 / 1 / 3 / 3;
+	}
+
+	#budget-form {
+		grid-area: 3 / 1/ 4 / 2;
+	}
+
+	#input-form {
+		grid-area: 3 / 2 / 4 / 3;
+	}
+
+	#expense-cat {
+		grid-area: 4 / 1 / 5 / 2;
+	}
+
+	#remaining-cat {
+		grid-area: 4 / 2 / 5 / 3;
+	}
+
+	#ent-cat {
+		grid-area: 5 / 1 / 6 / 2;
+	}
+
+	#food-cat {
+		grid-area: 5 / 2 / 6 / 3;
+	}
+
+	#clothing-cat {
+		grid-area: 6 / 1 / 7 / 2;
+	}
+
+	#bills-cat {
+		grid-area: 6 / 2 / 7 / 3;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#grid-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.boxes {
+		padding: 10px;
+		margin: 10px;
+	}
+
+	#starting-budget {
+		height: 100px;
+	}
+
+	#input-form {
+		height: 200px;
+	}
+
+	#ent-cat,
+	#food-cat,
+	#clothing-cat,
+	#bills-cat,
+	#expense-cat,
+	#remaining-cat {
+		height: 100px;
+	}
 }
