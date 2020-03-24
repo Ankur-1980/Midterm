@@ -115,7 +115,7 @@ function addName(event) {
 		setTimeout(function() {
 			nameInput.classList.toggle('warning');
 			nameInput.placeholder = 'Enter your name';
-		}, 3000);
+		}, 5000);
 	} else if (weeklyBudgetValue === '' || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
 		weeklyBudget.classList.toggle('warning');
 		weeklyBudget.value = 'Please enter a valid amount';
@@ -124,7 +124,7 @@ function addName(event) {
 			weeklyBudget.classList.toggle('warning');
 			weeklyBudget.value = '';
 			// weeklyBudget.placeholder = 'Enter your weekly budget';
-		}, 3000);
+		}, 5000);
 	} else {
 		nameBudgetWarning.textContent = '';
 		heading.textContent = `Hello, ${nameChange}`;
@@ -157,7 +157,7 @@ function main(event) {
 		setTimeout(function() {
 			amountWarn.classList.toggle('warning');
 			amountWarn.innerHTML = '';
-		}, 3000);
+		}, 5000);
 	} else if (amount > User.getAmountLeft()) {
 		amountWarn.classList.toggle('warning');
 		amountWarn.innerHTML = 'You have insufficient funds for this purchase';
@@ -165,7 +165,7 @@ function main(event) {
 		setTimeout(function() {
 			amountWarn.classList.toggle('warning');
 			amountWarn.innerHTML = '';
-		}, 3000);
+		}, 5000);
 	} else if (selectedItem === 'food') {
 		categoryWarning.textContent = '';
 		User.addFoodSpending(amount);
