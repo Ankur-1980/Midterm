@@ -111,7 +111,7 @@ function addName(event) {
 	if (nameChange === '') {
 		nameInput.classList.toggle('warning');
 		nameInput.placeholder = 'Please enter your name';
-		// error message goes away after 3 secs
+		// error message goes away after 5 secs
 		setTimeout(function() {
 			nameInput.classList.toggle('warning');
 			nameInput.placeholder = 'Enter your name';
@@ -119,7 +119,7 @@ function addName(event) {
 	} else if (weeklyBudgetValue === '' || weeklyBudgetValue < 1 || isNaN(weeklyBudgetValue)) {
 		weeklyBudget.classList.toggle('warning');
 		weeklyBudget.value = 'Please enter a valid amount';
-		// error message goes away after 3 secs
+		// error message goes away after 5 secs
 		setTimeout(function() {
 			weeklyBudget.classList.toggle('warning');
 			weeklyBudget.value = '';
@@ -153,7 +153,7 @@ function main(event) {
 	if (amount < 1 || isNaN(amount)) {
 		amountWarn.classList.toggle('warning');
 		amountWarn.innerHTML = 'Please enter a number greater than zero';
-		// error message goes away after 3 secs
+		// error message goes away after 5 secs
 		setTimeout(function() {
 			amountWarn.classList.toggle('warning');
 			amountWarn.innerHTML = '';
@@ -161,7 +161,7 @@ function main(event) {
 	} else if (amount > User.getAmountLeft()) {
 		amountWarn.classList.toggle('warning');
 		amountWarn.innerHTML = 'You have insufficient funds for this purchase';
-		// error message goes away after 3 secs
+		// error message goes away after 5 secs
 		setTimeout(function() {
 			amountWarn.classList.toggle('warning');
 			amountWarn.innerHTML = '';
@@ -195,7 +195,5 @@ function main(event) {
 }
 
 // Adding an event Listener to trigger every time a user is adding new expense.
-// add.addEventListener('click', main, false);
-// add.addEventListener('submit', main, false);
 nameBudget.addEventListener('click', addName, false);
 expense.addEventListener('click', main, false);
