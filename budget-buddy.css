@@ -45,6 +45,11 @@ h1 {
 	justify-self: center;
 }
 
+h2 {
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
 h3 {
 	font-size: 1.75rem;
 	padding-top: 0.5rem;
@@ -134,7 +139,7 @@ select {
 #bills-cat {
 	justify-self: center;
 	background-color: #c7f0db;
-	width: 250px;
+	width: 300px;
 }
 
 #ent-cat {
@@ -151,6 +156,30 @@ select {
 
 #bills-cat {
 	grid-area: 5 / 4 / 6 / 5;
+}
+
+footer {
+	grid-area: 6 / 1 / 7 / 5;
+	text-align: center;
+	font-family: monospace;
+	font-weight: 100;
+	font-size: 0.75em;
+	padding-top: 1rem;
+}
+
+footer p {
+	color: #839496;
+}
+
+footer a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #839496;
+	padding: 0px 10px;
+}
+
+footer a:not(:last-child) {
+	border-right: 1px solid #839496;
 }
 
 @media screen and (max-width: 1024px) {
@@ -197,33 +226,43 @@ select {
 	#bills-cat {
 		grid-area: 6 / 2 / 7 / 3;
 	}
+
+	footer {
+		grid-area: 7 / 1 / 8 / 3;
+	}
 }
 
 @media screen and (max-width: 600px) {
-	#grid-container {
-		display: flex;
-		flex-direction: column;
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	.cat-amounts {
+		font-size: 1rem;
 	}
 
 	.boxes {
 		padding: 10px;
-		margin: 10px;
 	}
 
-	#starting-budget {
-		height: 100px;
-	}
-
-	#input-form {
-		height: 200px;
-	}
-
+	#expense-cat,
+	#remaining-cat,
 	#ent-cat,
 	#food-cat,
 	#clothing-cat,
-	#bills-cat,
-	#expense-cat,
-	#remaining-cat {
-		height: 100px;
+	#bills-cat {
+		width: 200px;
+	}
+
+	footer {
+		font-size: 0.5rem;
 	}
 }
