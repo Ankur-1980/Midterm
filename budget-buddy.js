@@ -8,6 +8,7 @@ class spending {
 		this.billsSpending = []; //empty array to place bills spending
 		this.clothingSpending = []; //empty array to place clothing spending
 	}
+
 	//methods to add spending for each amount and add it to assigned empty array
 	addEntSpending(amount) {
 		this.entSpending.push(amount);
@@ -168,25 +169,25 @@ function main(event) {
 		}, 5000);
 	} else if (selectedItem === 'food') {
 		categoryWarning.textContent = '';
-		User.addFoodSpending(amount);
+		User.foodSpending.push(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'bills') {
 		categoryWarning.textContent = '';
-		User.addBillsSpending(amount);
+		User.billsSpending.push(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'ent') {
 		categoryWarning.textContent = '';
-		User.addEntSpending(amount);
+		User.entSpending.push(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
 	} else if (selectedItem === 'clothing') {
 		categoryWarning.textContent = '';
-		User.addClothingSpending(amount);
+		User.clothingSpending.push(amount);
 		User.getSpending(selectedItem);
 		User.getTotalSpending();
 		User.getAmountLeft();
