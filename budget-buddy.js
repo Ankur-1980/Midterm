@@ -9,22 +9,7 @@ class spending {
 		this.clothingSpending = []; //empty array to place clothing spending
 	}
 
-	//methods to add spending for each amount and add it to assigned empty array
-	addEntSpending(amount) {
-		this.entSpending.push(amount);
-	}
 
-	addFoodSpending(amount) {
-		this.foodSpending.push(amount);
-	}
-
-	addBillsSpending(amount) {
-		this.billsSpending.push(amount);
-	}
-
-	addClothingSpending(amount) {
-		this.clothingSpending.push(amount);
-	}
 
 	// function to return sum of each category
 	getSpending(selectedItem) {
