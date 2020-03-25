@@ -1,0 +1,20 @@
+{
+  "name": "Midterm-2",
+  "version": "1.0.0",
+  "description": "Grand Circus Front End January 2020 Midterm project",
+  "main": "budget-buddy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ankur-1980/Midterm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ankur-1980/Midterm/issues"
+  },
+  "homepage": "https://github.com/Ankur-1980/Midterm#readme"
+}
