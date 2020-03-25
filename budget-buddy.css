@@ -185,8 +185,8 @@ footer a {
 footer a:not(:last-child) {
 	border-right: 1px solid #839496;
 }
-
-@media screen and (max-width: 1024px) {
+/*For large devices, covers medium devices with current display*/
+@media screen and (max-width: 1200px) {
 	#grid-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -236,7 +236,7 @@ footer a:not(:last-child) {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	h1 {
 		font-size: 1.75rem;
 	}
@@ -263,10 +263,76 @@ footer a:not(:last-child) {
 	#food-cat,
 	#clothing-cat,
 	#bills-cat {
-		width: 200px;
+		width: 100%;
+		flex-direction: column;
 	}
 
 	footer {
 		font-size: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 315px) {
+	header {
+		width: 50%;
+	}
+	h1 {
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+	}
+	
+	.cat-amounts {
+		font-size: 0.5rem;
+	}
+
+	#starting-budget {
+		width: 50%;
+		font-size: 1rem;
+	}
+
+	#budget-form {
+		width: 50%;
+		font-size: 1rem;
+	}
+
+	#input-form {
+		width: 50%;
+	}
+	.cat-amounts {
+		font-size: 1rem;
+	}
+	#expense-cat {
+		width: 90%;
+	}
+
+	#remaining-cat {
+		width: 90%;
+	}
+
+	#ent-cat {
+		width: 90%;
+	}
+
+	#food-cat {
+		width: 90%;
+	}
+
+	#clothing-cat {
+		width: 90%;
+	}
+
+	#bills-cat {
+		width: 90%;
+	}
+
+	footer {
+		font-size: 0.20rem;
 	}
 }
