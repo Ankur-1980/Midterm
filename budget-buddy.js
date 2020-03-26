@@ -77,7 +77,7 @@ let nameBudget = document.querySelector('#add-name-budget');
 // selectItems is the dropDown Element that selects the category item element
 let selectItems = document.querySelector('#categories-select');
 
-// This hint should show a hint on  the webpage if there is invalid action by user.
+// This should show a warning on  the webpage if there is invalid action by user.
 let nameBudgetWarning = document.querySelector('#name-budget-warning');
 let categoryWarning = document.querySelector('#category-warning');
 
