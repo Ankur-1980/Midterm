@@ -265,7 +265,6 @@ footer a:not(:last-child) {
 	#clothing-cat,
 	#bills-cat {
 		width: 100%;
-		flex-direction: column;
 	}
 
 	footer {
